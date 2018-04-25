@@ -34,3 +34,9 @@ do_build() {
                 --enable-mpms-shared="prefork event worker"
     make
 }
+
+do_install() {
+  echo "Copying index.html to ${pkg_prefix}/htdocs"
+  mkdir -pv "$pkg_prefix/htdocs"
+  cp -v "$PLAN_CONTEXT/html/index.html" "$pkg_prefix/htdocs"
+}
