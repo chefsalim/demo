@@ -36,6 +36,7 @@ do_build() {
 }
 
 do_install() {
+  do_default_install
   echo "Copying index.html to ${pkg_prefix}/htdocs"
   mkdir -pv "$pkg_prefix/htdocs"
   cp -v "$PLAN_CONTEXT/html/index.html" "$pkg_prefix/htdocs"
